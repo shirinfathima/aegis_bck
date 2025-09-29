@@ -20,7 +20,7 @@ public class UserService {
         }
         user.setPassword(passwordEncoder.encode(user.getPassword())); // encrypt password
         if (user.getRole() == null) {
-        user.setRole(Role.USER); // default role
+            user.setRole(Role.USER); // default role
         }
         userRepo.save(user);
         return "User registered successfully";

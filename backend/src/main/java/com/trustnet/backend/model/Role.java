@@ -1,7 +1,8 @@
+// Role.java - UPDATE THIS FILE
 package com.trustnet.backend.model;
 
 public enum Role {
     USER,
-    ADMIN,  
-    VERIFIER
+    VERIFIER,
+    ISSUER  // Changed from ADMIN to ISSUER
 }

@@ -25,14 +25,14 @@ public class UserService {
         userRepo.save(user);
         return "User registered successfully";
     }
-    public String loginUser(User loginData) {
+    public Object loginUser(User loginData) {
     User user = userRepo.findByEmail(loginData.getEmail());
     if (user == null) {
         return "User not found";
     }
 
     if (passwordEncoder.matches(loginData.getPassword(), user.getPassword())) {
-        return "Login successful as " + user.getRole();
+        return user;
     } else {
         return "Invalid password";
     }
